@@ -2,8 +2,9 @@
  * @param { import("knex").Knex } knex
  * @returns { Promise<void> }
  */
+
 exports.up = async function(knex) {
-    return await knex.schema.createTable('database_epice', (table) => {
+    return await knex.schema.createTable('usuarios', (table) => {
         table.increments('id').primary()
         table.text('name').notNullable()
         table.text('email').notNullable()
@@ -18,5 +19,5 @@ exports.up = async function(knex) {
  * @returns { Promise<void> }
  */
 exports.down = async function(knex) {
-    return await knex.schema.dropTable('database_epice')
+    return await knex.schema.dropTable('usuarios')
 };
